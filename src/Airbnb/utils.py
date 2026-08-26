@@ -1,6 +1,10 @@
 import os
 import sys
 import pickle
+import pandas as pd
+import csv
+from sklearn.model_selection import train_test_split
+
 from src.Airbnb.exception import customexception
 
 
@@ -23,3 +27,13 @@ def load_object(file_path):
 
     except Exception as e:
         raise customexception(e, sys)
+
+
+def split_data(file_path):
+
+    df = pd.read_csv(file_path)
+    train_df, test_df = train_test_split(df, test_size=0.2, random_state=42)
+
+    print(f"Total : {len(df)} | Train : {len(train_df)} | Test : {len(test_df)}")
+
+    return train_df.to_numpy(), test_df.to_numpy()

@@ -83,7 +83,7 @@ class DataTransformation:
         except Exception as e:
             raise customexception(e, sys)
 
-    def initiale_data_transformer(self, train_path, test_path):
+    def initiale_data_transformer(self, train_df, test_df):
         """data
 
         Args:
@@ -93,8 +93,6 @@ class DataTransformation:
         """
 
         try:
-            train_df = pd.read_csv(train_path)
-            test_df = pd.read_csv(test_path)
             logging.info("Loaded train and test data successfuly")
 
             preprocessing_obj = self.get_data_transformation_object()
