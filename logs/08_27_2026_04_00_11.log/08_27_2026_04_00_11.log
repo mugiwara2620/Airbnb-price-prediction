@@ -1,0 +1,29 @@
+[ 2026-08-27 04:00:12,045 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2026-08-27 04:00:12,045 ] 97 werkzeug - INFO -  * Debugger PIN: 238-525-573
+[ 2026-08-27 04:00:12,183 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:00:12] "GET / HTTP/1.1" 200 -
+[ 2026-08-27 04:00:12,229 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:00:12] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:00:14,762 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:00:14] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:00:14,817 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:00:14] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:00:29,752 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:00:29] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:00:30,040 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:00:30] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:00:37,921 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:00:37] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:00:37,976 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:00:37] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:00:49,720 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:00:49] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:00:50,001 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:00:50] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:00:56,447 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:00:56] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:00:56,507 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:00:56] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:01:00,966 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:01:00] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:01:01,267 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:01:01] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:01:04,602 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:01:04] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:01:04,654 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:01:04] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:01:05,968 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:01:05] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:01:06,259 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:01:06] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:01:12,187 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:01:12] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:01:12,252 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:01:12] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:01:22,992 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:01:22] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:01:23,286 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:01:23] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:01:32,999 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:01:32] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:01:33,064 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:01:33] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:01:37,121 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:01:37] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:01:37,414 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:01:37] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:02:21,036 ] 97 werkzeug - INFO -  * Detected change in 'C:\\Users\\ayman\\Desktop\\2026-Learning\\lmProjects\\Airbnb-Price-Prediction\\app.py', reloading

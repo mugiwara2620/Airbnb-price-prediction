@@ -6,10 +6,11 @@ from torch.utils.data import DataLoader, TensorDataset
 from tqdm.auto import tqdm
 
 import numpy as np
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
-from src.Airbnb.exception import customexception
 from src.Airbnb.logger import logging
 from src.Airbnb.utils import save_object
+from src.Airbnb.exception import customexception
 
 
 # 1. Define Network with Dynamic Input Dimension
@@ -17,10 +18,14 @@ class TabularNN(nn.Module):
     def __init__(self, input_dim):
         super().__init__()
         self.price_prediction = nn.Sequential(
-            nn.Linear(input_dim, 128),
+            nn.Linear(input_dim, 256),
+            nn.BatchNorm1d(256),
+            nn.ReLU(),
+            nn.Dropout(0.1),
+            nn.Linear(256, 128),
             nn.BatchNorm1d(128),
             nn.ReLU(),
-            nn.Dropout(0.2),
+            nn.Dropout(0.05),
             nn.Linear(128, 64),
             nn.BatchNorm1d(64),
             nn.ReLU(),
@@ -68,9 +73,9 @@ class ModelTrainer:
             model = TabularNN(input_dim=input_dim).to(self.device)
 
             loss_fn = nn.L1Loss()
-            optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+            optimizer = torch.optim.AdamW(model.parameters(), lr=0.05)
 
-            epochs = 50
+            epochs = 100
             for epoch in tqdm(range(epochs)):
                 # --- Training ---
                 model.train()
@@ -109,6 +114,21 @@ class ModelTrainer:
                         f"Epoch: {epoch} | Train Loss: {train_loss:.4f} | Test Loss: {test_loss:.4f}"
                     )
 
+            model.eval()
+            y_true = []
+            y_preds = []
+
+            with torch.inference_mode():
+                for X_batch, y_batch in test_loader:
+                    batch_x = X_batch.to(self.device)
+                    test_preds = model(batch_x)
+                    y_preds.extend(test_preds.cpu().numpy())
+                    y_true.extend(y_batch.numpy())
+
+            rmse = np.sqrt(mean_squared_error(y_true=y_true, y_pred=y_preds))
+            mae = mean_absolute_error(y_true=y_true, y_pred=y_preds)
+            r2 = r2_score(y_true=y_true, y_pred=y_preds)
+            print(f"Final Test Metrics -> R2: {r2:.4f} | RMSE: {rmse} | MAE: {mae}")
             # Export weights dict
             torch.save(model.state_dict(), self.model_path)
             logging.info(f"Model state saved successfully to {self.model_path}")

@@ -11,7 +11,9 @@
 
   <body>
     <h1>Airbnb Price Prediction</h1>
-    <form action="{{url_for('home')}}" method="POST">
+
+    <!-- FIX 1: Point url_for to the view function name 'predict_datapoint' -->
+    <form action="{{url_for('predict_datapoint')}}" method="POST">
       <div class="form-group">
         <label for="property_type">Property Type:</label>
         <select name="property_type" id="property_type">
@@ -216,10 +218,15 @@
       <input type="submit" value="Predict Price" />
     </form>
 
+    <!-- FIX 2: Check for results and display {{results}} -->
+    {% if results %}
     <div id="result">
       <h3>
-        Your Airbnb Room Price will be <span id="finalResult">{{result}}</span>
+        Your Airbnb Room Price will be: $<span id="finalResult"
+          >{{results}}</span
+        >
       </h3>
     </div>
+    {% endif %}
   </body>
 </html>
