@@ -1,2 +1,23 @@
 [ 2026-08-27 04:19:36,685 ] 97 werkzeug - WARNING -  * Debugger is active!
 [ 2026-08-27 04:19:36,685 ] 97 werkzeug - INFO -  * Debugger PIN: 238-525-573
+[ 2026-08-27 04:19:43,390 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:19:43] "GET / HTTP/1.1" 200 -
+[ 2026-08-27 04:19:43,436 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:19:43] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:19:45,569 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:19:45] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:19:45,827 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:19:45] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:20:48,780 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:20:48] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:20:48,842 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:20:48] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:20:50,442 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:20:50] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:20:50,738 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:20:50] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:20:51,325 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:20:51] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:20:51,375 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:20:51] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:20:52,000 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:20:52] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:20:52,003 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:20:52] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:20:52,279 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:20:52] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:20:53,204 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:20:53] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:20:53,263 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:20:53] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:20:54,678 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:20:54] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:20:54,688 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:20:54] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:20:54,972 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:20:54] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+[ 2026-08-27 04:20:55,575 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:20:55] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:20:55,584 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:20:55] "POST /predict HTTP/1.1" 200 -
+[ 2026-08-27 04:20:55,836 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Aug/2026 04:20:55] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
