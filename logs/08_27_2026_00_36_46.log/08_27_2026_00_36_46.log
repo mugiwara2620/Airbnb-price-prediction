@@ -1,0 +1,2 @@
+[ 2026-08-27 00:36:50,634 ] 96 root - INFO - Loaded train and test data successfuly
+[ 2026-08-27 00:36:50,713 ] 117 root - INFO - Saved Preprocessor object to Artifacts\Preprocessor.pkl

@@ -11,6 +11,7 @@ def test_pipeline():
 
     print("Starting Data Transformer test")
     data_transformer = DataTransformation()
+
     test_arr, train_arr, preprocessor_path = data_transformer.initiale_data_transformer(
         train_df=train_df, test_df=test_df
     )

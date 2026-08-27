@@ -1,0 +1,8 @@
+[ 2026-08-27 02:04:55,338 ] 88 root - INFO - Loaded train and test data successfully
+[ 2026-08-27 02:04:56,036 ] 173 root - INFO - Saved Preprocessor object to Artifacts\Preprocessor.pkl
+[ 2026-08-27 02:05:05,429 ] 100 root - INFO - Epoch: 0 | Train Loss: 0.4138 | Test Loss: 0.3489
+[ 2026-08-27 02:05:58,254 ] 100 root - INFO - Epoch: 10 | Train Loss: 0.3434 | Test Loss: 0.3445
+[ 2026-08-27 02:06:43,292 ] 100 root - INFO - Epoch: 20 | Train Loss: 0.3377 | Test Loss: 0.3493
+[ 2026-08-27 02:07:25,652 ] 100 root - INFO - Epoch: 30 | Train Loss: 0.3355 | Test Loss: 0.3402
+[ 2026-08-27 02:08:08,426 ] 100 root - INFO - Epoch: 40 | Train Loss: 0.3334 | Test Loss: 0.3406
+[ 2026-08-27 02:08:51,291 ] 109 root - INFO - Model state saved successfully to Artifacts\model.pt

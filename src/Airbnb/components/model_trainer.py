@@ -3,6 +3,8 @@ import sys
 import torch
 from torch import nn
 from torch.utils.data import DataLoader, TensorDataset
+from tqdm.auto import tqdm
+
 import numpy as np
 
 from src.Airbnb.exception import customexception
@@ -15,11 +17,14 @@ class TabularNN(nn.Module):
     def __init__(self, input_dim):
         super().__init__()
         self.price_prediction = nn.Sequential(
-            nn.Linear(in_features=input_dim, out_features=64),
+            nn.Linear(input_dim, 128),
+            nn.BatchNorm1d(128),
             nn.ReLU(),
-            nn.Linear(in_features=64, out_features=32),
+            nn.Dropout(0.2),
+            nn.Linear(128, 64),
+            nn.BatchNorm1d(64),
             nn.ReLU(),
-            nn.Linear(in_features=32, out_features=1),
+            nn.Linear(64, 1),
         )
 
     def forward(self, x):
@@ -66,7 +71,7 @@ class ModelTrainer:
             optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
             epochs = 50
-            for epoch in range(epochs):
+            for epoch in tqdm(range(epochs)):
                 # --- Training ---
                 model.train()
                 train_loss = 0.0

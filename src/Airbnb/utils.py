@@ -36,4 +36,4 @@ def split_data(file_path):
 
     print(f"Total : {len(df)} | Train : {len(train_df)} | Test : {len(test_df)}")
 
-    return train_df.to_numpy(), test_df.to_numpy()
+    return train_df, test_df

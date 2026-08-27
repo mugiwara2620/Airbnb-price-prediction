@@ -51,7 +51,6 @@ class DataTransformation:
                 "number_of_reviews",
                 "review_scores_rating",
             ]
-
             # Numerical Pipeline: Impute missing values with median, then scale
             num_pipline = Pipeline(
                 steps=[
@@ -84,38 +83,96 @@ class DataTransformation:
             raise customexception(e, sys)
 
     def initiale_data_transformer(self, train_df, test_df):
-        """data
-
-        Args:
-            train_arr,
-            test_arr,
-            self.data_transformation_config.preprocessor_obj_file_path,
-        """
 
         try:
-            logging.info("Loaded train and test data successfuly")
+            logging.info("Loaded train and test data successfully")
+
+            # -----------------------------------
+            # 1. Handle amenities BEFORE splitting
+            # -----------------------------------
+
+            def count_amenities(x):
+                if pd.isna(x):
+                    return 0
+
+                return len(str(x).split(","))
+
+            train_df = train_df.copy()
+            test_df = test_df.copy()
+
+            train_df["amenities"] = train_df["amenities"].apply(count_amenities)
+            test_df["amenities"] = test_df["amenities"].apply(count_amenities)
+
+            # -----------------------------------
+            # 2. Create preprocessor
+            # -----------------------------------
 
             preprocessing_obj = self.get_data_transformation_object()
+
             target_column_name = "log_price"
 
-            # Separate target and predictor features
+            # -----------------------------------
+            # 3. Separate X and y
+            # -----------------------------------
+            def convert_percentage(x):
+                if pd.isna(x):
+                    return np.nan
+
+                x = str(x).strip()
+
+                if x.endswith("%"):
+                    return float(x[:-1]) / 100
+
+                return float(x)
+
+            train_df["host_response_rate"] = train_df["host_response_rate"].apply(
+                convert_percentage
+            )
+
+            test_df["host_response_rate"] = test_df["host_response_rate"].apply(
+                convert_percentage
+            )
+
             input_feature_train_df = train_df.drop(columns=[target_column_name])
+
             target_feature_train_df = train_df[target_column_name]
 
             input_feature_test_df = test_df.drop(columns=[target_column_name])
+
             target_feature_test_df = test_df[target_column_name]
 
-            # Combine transformed features and target values info arrays
-            train_arr = np.c_[input_feature_train_df, np.array(target_feature_train_df)]
-            test_arr = np.c_[input_feature_test_df, np.array(target_feature_test_df)]
+            # -----------------------------------
+            # 4. Transform
+            # -----------------------------------
 
-            # Save the ditted Scikit_learn preprocessor object for future inference
+            input_feature_train_arr = preprocessing_obj.fit_transform(
+                input_feature_train_df
+            )
+
+            input_feature_test_arr = preprocessing_obj.transform(input_feature_test_df)
+
+            # -----------------------------------
+            # 5. Combine X and y
+            # -----------------------------------
+
+            train_arr = np.c_[
+                input_feature_train_arr, np.array(target_feature_train_df)
+            ]
+
+            test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]
+
+            # -----------------------------------
+            # 6. Save preprocessor
+            # -----------------------------------
+
             save_object(
                 file_path=self.data_transformation_config.preprocessor_obj_file_path,
                 obj=preprocessing_obj,
             )
+
             logging.info(
-                f"Saved Preprocessor object to {self.data_transformation_config.preprocessor_obj_file_path}"
+                f"Saved Preprocessor object to "
+                f"{self.data_transformation_config.preprocessor_obj_file_path}"
             )
 
             return (
@@ -123,5 +180,6 @@ class DataTransformation:
                 test_arr,
                 self.data_transformation_config.preprocessor_obj_file_path,
             )
+
         except Exception as e:
             raise customexception(e, sys)
